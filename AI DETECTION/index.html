@@ -9,8 +9,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.12.0/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 
-<!-- Google Fonts - Modern -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
 <style>
 * {
@@ -20,98 +21,138 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
     min-height: 100vh;
-    background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
-    padding: 40px 20px;
+    background: linear-gradient(45deg, #fdf6f0, #f8e8dc, #fdf6f0, #ede0d3);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease-in-out infinite;
+    font-family: 'Nunito', sans-serif;
+    padding: 30px 20px;
     overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Animated Background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(173, 216, 230, 0.3) 0%, transparent 50%);
+    animation: floatingBubbles 12s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes floatingBubbles {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(5deg); }
+    66% { transform: translateY(10px) rotate(-3deg); }
 }
 
 /* Main Container */
-.comic-container {
-    max-width: 600px;
+.main-container {
+    max-width: 500px;
     margin: 0 auto;
     position: relative;
+    z-index: 10;
 }
 
 /* Main Title */
-.pow-title {
-    font-size: 3.5rem;
+.main-title {
+    font-size: 2.5rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #2c3e50;
     text-align: center;
-    margin-bottom: 15px;
-    letter-spacing: -1px;
-    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: textPulse 2s ease-in-out infinite;
 }
 
-/* Starburst Badge - AI Indicator */
-.starburst {
-    position: relative;
+.main-title i {
+    color: #4ecdc4;
+    margin-right: 10px;
+}
+
+@keyframes textPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+/* AI Badge */
+.ai-badge {
     display: inline-block;
-    margin: 0 auto 30px;
-    padding: 12px 28px;
-    background: linear-gradient(135deg, #00d9ff 0%, #0099ff 100%);
+    margin: 0 auto 25px;
+    padding: 10px 25px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+    background-size: 300% 300%;
+    animation: gradientFlow 3s ease-in-out infinite;
     border-radius: 50px;
     font-weight: 700;
     font-size: 0.9rem;
-    color: #0f1419;
+    color: white;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    box-shadow: 
-        0 8px 20px rgba(0, 217, 255, 0.3),
-        inset 0 -2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     text-align: center;
     width: 100%;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Main Content Box - Neuromorphic */
-.comic-box {
-    background: linear-gradient(145deg, #1a1f2e, #0f1419);
-    border-radius: 24px;
-    padding: 40px;
-    position: relative;
-    box-shadow: 
-        0 20px 50px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+@keyframes gradientFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Content Box */
+.content-box {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 25px;
 }
 
 /* Section Title */
 .section-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #2c3e50;
     text-align: center;
-    margin-bottom: 35px;
-    letter-spacing: -0.5px;
-    text-transform: uppercase;
+    margin-bottom: 25px;
 }
 
-/* Upload Zone - Bold Neuromorphic */
+.section-title i {
+    color: #4ecdc4;
+    margin-right: 8px;
+}
+
+/* Upload Zone */
 .upload-zone {
     position: relative;
-    border-radius: 16px;
-    padding: 50px 30px;
+    border-radius: 20px;
+    padding: 40px 25px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: linear-gradient(145deg, #0f1419, #1a1f2e);
-    box-shadow: 
-        0 12px 30px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(0, 217, 255, 0.1),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.8);
-    border: 2px solid rgba(0, 217, 255, 0.2);
+    transition: all 0.4s ease;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 3px dashed #4ecdc4;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .upload-zone:hover {
-    border-color: rgba(0, 217, 255, 0.6);
-    box-shadow: 
-        0 16px 40px rgba(0, 217, 255, 0.2),
-        inset 0 1px 0 rgba(0, 217, 255, 0.2),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.8);
-    transform: translateY(-2px);
+    border-color: #ff6b6b;
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(78, 205, 196, 0.2);
 }
 
 .upload-zone input[type="file"] {
@@ -125,95 +166,85 @@ body {
 }
 
 .upload-icon {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
+    font-size: 3rem;
+    margin-bottom: 12px;
     display: block;
-    filter: drop-shadow(0 4px 12px rgba(0, 217, 255, 0.3));
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
 }
 
 .upload-text {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #2c3e50;
 }
 
 .upload-subtext {
     font-size: 0.85rem;
-    color: #8899aa;
+    color: #7f8c8d;
     margin-top: 8px;
-    font-weight: 500;
 }
 
 /* Preview Image Container */
 .preview-container {
-    margin-top: 35px;
-    position: relative;
+    margin-top: 25px;
     display: none;
     border-radius: 16px;
     overflow: hidden;
+    animation: slideUp 0.5s ease;
 }
 
 .preview-container.active {
     display: block;
-    animation: slideUp 0.5s ease;
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 #preview {
     width: 100%;
     display: block;
     border-radius: 16px;
-    box-shadow: 
-        0 15px 40px rgba(0, 217, 255, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 3px solid #fff;
 }
 
-/* Result Container - Bold */
-.speech-bubble {
+/* Result Container */
+.result-bubble {
     position: relative;
-    background: linear-gradient(145deg, #0099ff, #0077cc);
-    border-radius: 16px;
-    padding: 30px 25px;
-    margin-top: 30px;
+    background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+    border-radius: 20px;
+    padding: 25px 20px;
+    margin-top: 25px;
     display: none;
     animation: slideUp 0.5s ease;
-    box-shadow: 
-        0 15px 40px rgba(0, 153, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.speech-bubble.active {
+.result-bubble.active {
     display: block;
 }
 
 #result {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 800;
     text-align: center;
     color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 #result .probability {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.85);
-    margin-top: 12px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+    font-weight: 600;
 }
 
 /* Loading State */
@@ -228,45 +259,211 @@ body {
 }
 
 .loading-text {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #00d9ff;
-    animation: pulse 1.5s ease-in-out infinite;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4ecdc4;
+    animation: textPulse 1.5s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e9ecef;
+    border-top: 4px solid #4ecdc4;
+    border-radius: 50%;
+    margin: 15px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* History Section */
+.history-section {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.history-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.history-title i {
+    color: #feca57;
+    margin-right: 8px;
+}
+
+.clear-history-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a5a);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+}
+
+.clear-history-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.history-list {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: linear-gradient(135deg, #f8f9fa, #fff);
+    border-radius: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.history-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.history-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #4ecdc4;
+}
+
+.history-info {
+    flex: 1;
+}
+
+.history-result {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.history-confidence {
+    font-size: 0.85rem;
+    color: #4ecdc4;
+    font-weight: 600;
+}
+
+.history-date {
+    font-size: 0.75rem;
+    color: #95a5a6;
+}
+
+.history-delete {
+    background: none;
+    border: none;
+    color: #ff6b6b;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.history-delete:hover {
+    transform: scale(1.2);
+}
+
+.history-empty {
+    text-align: center;
+    padding: 30px;
+    color: #95a5a6;
+}
+
+.history-empty i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+    color: #bdc3c7;
 }
 
 /* Footer */
-.comic-footer {
+.app-footer {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 0.85rem;
-    color: #6688aa;
-    font-weight: 500;
+    color: #7f8c8d;
 }
 
-.comic-footer span {
-    color: #00d9ff;
+.app-footer span {
+    color: #4ecdc4;
+    font-weight: 700;
+}
+
+/* Scrollbar */
+.history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: #4ecdc4;
+    border-radius: 3px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .content-box, .history-section {
+        padding: 25px 20px;
+    }
+    
+    .upload-zone {
+        padding: 30px 20px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="comic-container">
+<div class="animated-bg"></div>
+
+<div class="main-container">
     <!-- Title -->
-    <h1 class="pow-title">AI DETECTION</h1>
+    <h1 class="main-title"><i class="fas fa-robot"></i>AI Detection</h1>
     
-    <div class="comic-box">
+    <div class="content-box">
         <!-- AI Badge -->
-        <div class="starburst">Powered by AI</div>
+        <div class="ai-badge"><i class="fas fa-magic"></i> Powered by Machine Learning</div>
         
-        <h2 class="section-title">Image Recognition</h2>
+        <h2 class="section-title"><i class="fas fa-camera"></i>Image Recognition</h2>
         
         <!-- Upload Zone -->
         <div class="upload-zone" id="dropZone">
@@ -283,23 +480,38 @@ body {
         
         <!-- Loading -->
         <div class="loading" id="loading">
-            <div class="loading-text">Analyzing...</div>
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Analyzing image...</div>
         </div>
         
         <!-- Result -->
-        <div class="speech-bubble" id="resultBubble">
+        <div class="result-bubble" id="resultBubble">
             <div id="result"></div>
         </div>
-        
-        <!-- Footer -->
-        <div class="comic-footer">
-            Powered by <span>Teachable Machine</span> AI
+    </div>
+    
+    <!-- History Section -->
+    <div class="history-section">
+        <div class="history-header">
+            <h3 class="history-title"><i class="fas fa-history"></i>Detection History</h3>
+            <button class="clear-history-btn" onclick="clearHistory()">
+                <i class="fas fa-trash"></i> Clear All
+            </button>
         </div>
+        <div class="history-list" id="historyList">
+            <!-- History items will be inserted here -->
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="app-footer">
+        Powered by <span>Teachable Machine</span> AI
     </div>
 </div>
 
 <script>
 const MODEL_URL = "https://teachablemachine.withgoogle.com/models/H2WjoBxYp/";
+const HISTORY_KEY = "ai_detection_history";
 
 let model;
 
@@ -318,6 +530,92 @@ async function loadModel() {
 }
 loadModel();
 
+// Load history on page load
+document.addEventListener('DOMContentLoaded', () => {
+    renderHistory();
+});
+
+// Get history from localStorage
+function getHistory() {
+    const history = localStorage.getItem(HISTORY_KEY);
+    return history ? JSON.parse(history) : [];
+}
+
+// Save history to localStorage
+function saveHistory(history) {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+}
+
+// Add item to history
+function addToHistory(imageData, result, confidence) {
+    const history = getHistory();
+    const newItem = {
+        id: Date.now(),
+        image: imageData,
+        result: result,
+        confidence: confidence,
+        date: new Date().toLocaleString()
+    };
+    
+    // Add to beginning of array
+    history.unshift(newItem);
+    
+    // Keep only last 20 items
+    if (history.length > 20) {
+        history.pop();
+    }
+    
+    saveHistory(history);
+    renderHistory();
+}
+
+// Delete single history item
+function deleteHistoryItem(id) {
+    let history = getHistory();
+    history = history.filter(item => item.id !== id);
+    saveHistory(history);
+    renderHistory();
+}
+
+// Clear all history
+function clearHistory() {
+    if (confirm('Are you sure you want to clear all detection history?')) {
+        localStorage.removeItem(HISTORY_KEY);
+        renderHistory();
+    }
+}
+
+// Render history list
+function renderHistory() {
+    const historyList = document.getElementById('historyList');
+    const history = getHistory();
+    
+    if (history.length === 0) {
+        historyList.innerHTML = `
+            <div class="history-empty">
+                <i class="fas fa-inbox"></i>
+                <p>No detection history yet</p>
+                <p style="font-size: 0.8rem;">Upload an image to start!</p>
+            </div>
+        `;
+        return;
+    }
+    
+    historyList.innerHTML = history.map(item => `
+        <div class="history-item">
+            <img src="${item.image}" alt="Detection" class="history-thumbnail">
+            <div class="history-info">
+                <div class="history-result">${item.result}</div>
+                <div class="history-confidence">${item.confidence}% confidence</div>
+                <div class="history-date">${item.date}</div>
+            </div>
+            <button class="history-delete" onclick="deleteHistoryItem(${item.id})" title="Delete">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `).join('');
+}
+
 // Predict image
 async function predictImage(event) {
     if (!model) {
@@ -334,7 +632,8 @@ async function predictImage(event) {
     const resultBubble = document.getElementById("resultBubble");
 
     // Show preview
-    img.src = URL.createObjectURL(file);
+    const imageUrl = URL.createObjectURL(file);
+    img.src = imageUrl;
     previewContainer.classList.add("active");
     resultBubble.classList.remove("active");
     loading.classList.add("active");
@@ -346,13 +645,31 @@ async function predictImage(event) {
             a.probability > b.probability ? a : b
         );
 
+        const confidencePercent = (best.probability * 100).toFixed(1);
+
         // Hide loading, show result
         loading.classList.remove("active");
         resultBubble.classList.add("active");
 
         document.getElementById("result").innerHTML =
-            `${best.className.toUpperCase()}
-             <div class="probability">Confidence: ${(best.probability * 100).toFixed(1)}%</div>`;
+            `<i class="fas fa-check-circle"></i> ${best.className.toUpperCase()}
+             <div class="probability">Confidence: ${confidencePercent}%</div>`;
+        
+        // Convert image to base64 for storage
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Resize for storage (smaller thumbnail)
+        const maxSize = 100;
+        const ratio = Math.min(maxSize / img.width, maxSize / img.height);
+        canvas.width = img.width * ratio;
+        canvas.height = img.height * ratio;
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        
+        const imageData = canvas.toDataURL('image/jpeg', 0.7);
+        
+        // Add to history
+        addToHistory(imageData, best.className, confidencePercent);
     };
 }
 
@@ -361,18 +678,18 @@ const dropZone = document.getElementById("dropZone");
 
 dropZone.addEventListener("dragover", (e) => {
     e.preventDefault();
-    dropZone.style.borderColor = "rgba(0, 217, 255, 0.8)";
-    dropZone.style.background = "rgba(0, 217, 255, 0.05)";
+    dropZone.style.borderColor = "#ff6b6b";
+    dropZone.style.background = "linear-gradient(135deg, #fff, #f0fff4)";
 });
 
 dropZone.addEventListener("dragleave", () => {
-    dropZone.style.borderColor = "rgba(0, 217, 255, 0.2)";
+    dropZone.style.borderColor = "#4ecdc4";
     dropZone.style.background = "";
 });
 
 dropZone.addEventListener("drop", (e) => {
     e.preventDefault();
-    dropZone.style.borderColor = "rgba(0, 217, 255, 0.2)";
+    dropZone.style.borderColor = "#4ecdc4";
     dropZone.style.background = "";
     
     const file = e.dataTransfer.files[0];
