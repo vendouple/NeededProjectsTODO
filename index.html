@@ -1,714 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NICHOLAS XII-4 | PROJECT HUB</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Roboto+Condensed:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!-- Industrial Background Elements -->
-    <div class="bg-texture"></div>
-    <div class="bg-grid"></div>
-    <div class="bg-noise"></div>
-
-    <!-- Asymmetric Header -->
-    <header class="header">
-      <div class="header-frame">
-        <div class="header-left">
-          <div class="logo-block">
-            <div class="logo-icon">
-              <i class="fas fa-cogs"></i>
-            </div>
-            <div class="logo-text">
-              <div class="company-name">Nobindes.inc</div>
-              <div class="tagline">Demo Projects</div>
-            </div>
-          </div>
-        </div>
-        <div class="header-right">
-          <div class="status-bar">
-            <div class="status-item">
-              <span class="status-label">STATUS:</span>
-              <span class="status-value active">ONLINE</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Main Content with Asymmetric Layout -->
-    <main class="main-content">
-      <div class="content-wrapper">
-        <!-- Large Title Block -->
-        <div class="title-section">
-          <div class="title-frame">
-            <h1 class="main-title">PROJECT<br />COLLECTION</h1>
-            <div class="title-accent"></div>
-          </div>
-          <div class="subtitle-block">
-            <p>EXPLORE INTERACTIVE DEMOS & APPLICATIONS</p>
-          </div>
-        </div>
-
-        <!-- Asymmetric Project Grid -->
-        <div class="projects-container">
-          <!-- Large Featured Project -->
-          <a href="bookstore/index.html" class="project-panel large-panel">
-            <div class="panel-header">
-              <div class="panel-icon">
-                <i class="fas fa-store"></i>
-              </div>
-              <div class="panel-number">01</div>
-            </div>
-            <div class="panel-content">
-              <h2 class="panel-title">BOOKSTORE</h2>
-              <div class="panel-subtitle">DEMO PLATFORM</div>
-              <p class="panel-description">
-                FULL-STACK WEB APPLICATION WITH REAL-TIME CART FUNCTIONALITY AND
-                MODERN NEUMORPHIC DESIGN SYSTEM
-              </p>
-              <div class="tech-tags">
-                <span class="tech-tag">JAVASCRIPT</span>
-                <span class="tech-tag">SUPABASE</span>
-                <span class="tech-tag">CSS3</span>
-              </div>
-            </div>
-            <div class="panel-footer">
-              <div class="access-btn">
-                <span>ACCESS PROJECT</span>
-                <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-          </a>
-
-          <!-- Medium Project Panel -->
-          <a href="Progressbar/index.html" class="project-panel medium-panel">
-            <div class="panel-header">
-              <div class="panel-icon">
-                <i class="fas fa-photo-video"></i>
-              </div>
-              <div class="panel-number">02</div>
-            </div>
-            <div class="panel-content">
-              <h2 class="panel-title">SCRAPBOOK</h2>
-              <div class="panel-subtitle">LOADING SYSTEM</div>
-              <p class="panel-description">
-                ANIMATED LOADING INTERFACE WITH DYNAMIC MESSAGING
-              </p>
-              <div class="tech-tags">
-                <span class="tech-tag">ANIMATION</span>
-                <span class="tech-tag">BOOTSTRAP</span>
-              </div>
-            </div>
-            <div class="panel-footer">
-              <div class="access-btn">
-                <span>LAUNCH</span>
-                <i class="fas fa-external-link-alt"></i>
-              </div>
-            </div>
-          </a>
-
-          <!-- Small Coming Soon Panel -->
-          <div class="project-panel small-panel disabled">
-            <div class="panel-header">
-              <div class="panel-icon">
-                <i class="fas fa-wrench"></i>
-              </div>
-              <div class="panel-number">03</div>
-            </div>
-            <div class="panel-content">
-              <h2 class="panel-title">MORE</h2>
-              <div class="panel-subtitle">IN DEVELOPMENT</div>
-              <p class="panel-description">ADDITIONAL PROJECTS COMING SOON</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <!-- Asymmetric Footer -->
-    <footer class="footer">
-      <div class="footer-frame">
-        <div class="footer-left">
-          <div class="copyright">
-            <span>ENGINEERED BY</span>
-            <strong>JAMES C</strong>
-          </div>
-        </div>
-        <div class="footer-right">
-          <div class="social-panel">
-            <a href="#" class="social-btn" title="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="#" class="social-btn" title="LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#" class="social-btn" title="Portfolio">
-              <i class="fas fa-globe"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Roboto Condensed", sans-serif;
-        background: #3c3530;
-        color: #f4f1ea;
-        min-height: 100vh;
-        position: relative;
-        overflow-x: hidden;
-      }
-
-      /* Industrial Background Textures */
-      .bg-texture {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-            circle at 25% 25%,
-            #4a453d 0%,
-            transparent 50%
-          ),
-          radial-gradient(circle at 75% 75%, #5c5448 0%, transparent 50%),
-          linear-gradient(135deg, #3c3530 0%, #4a453d 50%, #3c3530 100%);
-        z-index: -3;
-      }
-
-      .bg-grid {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: linear-gradient(
-            rgba(212, 181, 126, 0.15) 1px,
-            transparent 1px
-          ),
-          linear-gradient(90deg, rgba(212, 181, 126, 0.15) 1px, transparent 1px);
-        background-size: 50px 50px;
-        z-index: -2;
-        animation: gridShift 20s linear infinite;
-      }
-
-      @keyframes gridShift {
-        0% {
-          transform: translate(0, 0);
-        }
-        100% {
-          transform: translate(50px, 50px);
-        }
-      }
-
-      .bg-noise {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: radial-gradient(
-            circle at 20% 30%,
-            rgba(168, 129, 61, 0.12) 0%,
-            transparent 20%
-          ),
-          radial-gradient(
-            circle at 80% 70%,
-            rgba(212, 181, 126, 0.08) 0%,
-            transparent 25%
-          );
-        z-index: -1;
-        animation: pulse 8s ease-in-out infinite;
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 0.7;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
-
-      /* Asymmetric Header */
-      .header {
-        padding: 1rem 0;
-        background: linear-gradient(135deg, #4a453d 0%, #3c3530 100%);
-        border-bottom: 3px solid #d4b57e;
-        position: relative;
-      }
-
-      .header::after {
-        content: "";
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        width: 60%;
-        height: 3px;
-        background: #a8813d;
-      }
-
-      .header-frame {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo-block {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .logo-icon {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #d4b57e, #a8813d);
-        border: 2px solid #6b5d4f;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        color: #2c2822;
-        transform: skew(-10deg);
-        box-shadow: 0 0 20px rgba(168, 129, 61, 0.4);
-      }
-
-      .company-name {
-        font-family: "Bebas Neue", sans-serif;
-        font-size: 2rem;
-        font-weight: 400;
-        color: #d4b57e;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        letter-spacing: 2px;
-      }
-
-      .tagline {
-        font-size: 0.9rem;
-        color: #c0b49a;
-        font-weight: 400;
-        letter-spacing: 1px;
-      }
-
-      .status-bar {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .status-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: rgba(168, 129, 61, 0.3);
-        padding: 0.5rem 1rem;
-        border: 1px solid #d4b57e;
-        transform: skew(-5deg);
-      }
-
-      .status-label {
-        font-size: 0.8rem;
-        color: #c0b49a;
-      }
-
-      .status-value.active {
-        color: #7fb069;
-        font-weight: bold;
-        text-shadow: 0 0 10px #7fb069;
-      }
-
-      /* Main Content */
-      .main-content {
-        padding: 3rem 0;
-      }
-
-      .content-wrapper {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      /* Title Section */
-      .title-section {
-        margin-bottom: 4rem;
-        position: relative;
-      }
-
-      .title-frame {
-        position: relative;
-        display: inline-block;
-      }
-
-      .main-title {
-        font-family: "Bebas Neue", sans-serif;
-        font-size: 5rem;
-        font-weight: 400;
-        color: #f4f1ea;
-        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-        letter-spacing: 4px;
-        line-height: 0.9;
-        transform: skew(-2deg);
-        margin-bottom: 1rem;
-      }
-
-      .title-accent {
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 80%;
-        height: 6px;
-        background: linear-gradient(90deg, #d4b57e, #a8813d, transparent);
-        transform: skew(-10deg);
-      }
-
-      .subtitle-block {
-        background: rgba(168, 129, 61, 0.3);
-        border-left: 4px solid #d4b57e;
-        padding: 1rem 2rem;
-        margin-top: 2rem;
-        transform: skew(-1deg);
-        display: inline-block;
-      }
-
-      .subtitle-block p {
-        font-size: 1.1rem;
-        color: #d4b57e;
-        font-weight: 700;
-        letter-spacing: 1px;
-      }
-
-      /* Asymmetric Project Grid */
-      .projects-container {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: auto auto;
-        gap: 2rem;
-        grid-template-areas:
-          "large medium"
-          "large small";
-      }
-
-      .project-panel {
-        background: linear-gradient(135deg, #4a453d 0%, #3c3530 100%);
-        border: 2px solid #6b5d4f;
-        border-left: 6px solid #d4b57e;
-        text-decoration: none;
-        color: inherit;
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        transform: skew(-1deg);
-      }
-
-      .project-panel::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(168, 129, 61, 0.15),
-          transparent
-        );
-        transition: left 0.5s;
-      }
-
-      .project-panel:hover::before {
-        left: 100%;
-      }
-
-      .project-panel:hover {
-        border-left-color: #a8813d;
-        box-shadow: 0 10px 30px rgba(168, 129, 61, 0.4);
-        transform: skew(-1deg) translateY(-5px);
-      }
-
-      .large-panel {
-        grid-area: large;
-        padding: 3rem;
-        min-height: 400px;
-      }
-
-      .medium-panel {
-        grid-area: medium;
-        padding: 2rem;
-        min-height: 180px;
-      }
-
-      .small-panel {
-        grid-area: small;
-        padding: 2rem;
-        min-height: 180px;
-      }
-
-      .panel-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 2rem;
-      }
-
-      .panel-icon {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, #d4b57e, #a8813d);
-        border: 2px solid #6b5d4f;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        color: #2c2822;
-        transform: skew(-10deg);
-        box-shadow: 0 0 15px rgba(168, 129, 61, 0.5);
-      }
-
-      .panel-number {
-        font-family: "Bebas Neue", sans-serif;
-        font-size: 3rem;
-        color: #d4b57e;
-        opacity: 0.4;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-      }
-
-      .panel-content {
-        margin-bottom: 2rem;
-      }
-
-      .panel-title {
-        font-family: "Bebas Neue", sans-serif;
-        font-size: 2.5rem;
-        color: #d4b57e;
-        margin-bottom: 0.5rem;
-        letter-spacing: 2px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-      }
-
-      .large-panel .panel-title {
-        font-size: 3.5rem;
-      }
-
-      .panel-subtitle {
-        font-size: 1rem;
-        color: #a8813d;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        letter-spacing: 1px;
-      }
-
-      .panel-description {
-        color: #c0b49a;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        font-weight: 400;
-      }
-
-      .tech-tags {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-      }
-
-      .tech-tag {
-        background: rgba(168, 129, 61, 0.4);
-        border: 1px solid #a8813d;
-        color: #d4b57e;
-        padding: 0.3rem 0.8rem;
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        transform: skew(-5deg);
-      }
-
-      .panel-footer {
-        margin-top: auto;
-      }
-
-      .access-btn {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: linear-gradient(135deg, #d4b57e, #a8813d);
-        color: #2c2822;
-        padding: 1rem 2rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        transform: skew(-5deg);
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-      }
-
-      .project-panel:hover .access-btn {
-        background: linear-gradient(135deg, #a8813d, #8b6f34);
-        box-shadow: 0 0 20px rgba(168, 129, 61, 0.6);
-      }
-
-      .disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      .disabled:hover {
-        transform: skew(-1deg);
-        box-shadow: none;
-      }
-
-      /* Footer */
-      .footer {
-        margin-top: 4rem;
-        background: linear-gradient(135deg, #3c3530 0%, #4a453d 100%);
-        border-top: 3px solid #d4b57e;
-        padding: 2rem 0;
-        position: relative;
-      }
-
-      .footer::before {
-        content: "";
-        position: absolute;
-        top: -3px;
-        right: 0;
-        width: 40%;
-        height: 3px;
-        background: #a8813d;
-      }
-
-      .footer-frame {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .copyright {
-        font-size: 0.9rem;
-        color: #c0b49a;
-      }
-
-      .copyright strong {
-        color: #d4b57e;
-        font-weight: 700;
-      }
-
-      .social-panel {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .social-btn {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, #4a453d, #3c3530);
-        border: 2px solid #6b5d4f;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #c0b49a;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        transform: skew(-10deg);
-      }
-
-      .social-btn:hover {
-        background: linear-gradient(135deg, #d4b57e, #a8813d);
-        color: #2c2822;
-        border-color: #a8813d;
-        box-shadow: 0 0 15px rgba(168, 129, 61, 0.6);
-      }
-
-      /* Responsive Design */
-      @media (max-width: 1024px) {
-        .projects-container {
-          grid-template-columns: 1fr;
-          grid-template-areas:
-            "large"
-            "medium"
-            "small";
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .main-title {
-          font-size: 4rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .header-frame {
-          flex-direction: column;
-          gap: 1rem;
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 50%, #0a0e15 100%);
+            min-height: 100vh;
+            padding: 60px 20px;
+            color: #ffffff;
         }
 
-        .main-title {
-          font-size: 3rem;
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 2;
         }
 
-        .large-panel,
-        .medium-panel,
-        .small-panel {
-          padding: 2rem;
-          min-height: auto;
+        .header h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #00d9ff, #0099ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideDown 0.8s ease;
         }
 
-        .panel-title {
-          font-size: 2rem;
+        .header p {
+            font-size: 1.2rem;
+            color: #8899aa;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .large-panel .panel-title {
-          font-size: 2.5rem;
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .footer-frame {
-          flex-direction: column;
-          gap: 1rem;
-          text-align: center;
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
-        .content-wrapper {
-          padding: 0 1rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .main-title {
-          font-size: 2.5rem;
-        }
-
-        .company-name {
-          font-size: 1.5rem;
-        }
-
-        .panel-icon {
-          width: 50px;
-          height: 50px;
-          font-size: 1.2rem;
+        /* Project Card */
+        .project-card {
+            background: linear-gradient(145deg, #1a1f2e, #0f1419);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
-        .panel-number {
-          font-size: 2rem;
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.1), transparent);
+            transition: left 0.5s ease;
         }
-      }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 217, 255, 0.3);
+            box-shadow: 
+                0 30px 60px rgba(0, 217, 255, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 4px 12px rgba(0, 217, 255, 0.2));
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: #8899aa;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #00d9ff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-features {
+            margin: 20px 0;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .feature {
+            font-size: 0.9rem;
+            color: #6688aa;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature::before {
+            content: '▸';
+            color: #00d9ff;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .project-button {
+            display: inline-block;
+            width: 100%;
+            padding: 15px 30px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, #00d9ff, #0099ff);
+            color: #0f1419;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 217, 255, 0.3);
+        }
+
+        .project-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 217, 255, 0.4);
+        }
+
+        .project-button:active {
+            transform: translateY(0);
+        }
+
+        /* Accent Circles (Background) */
+        .accent-circle {
+            position: fixed;
+            border-radius: 50%;
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .circle-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #00d9ff, transparent);
+            top: -100px;
+            left: -100px;
+        }
+
+        .circle-2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #0099ff, transparent);
+            bottom: 50px;
+            right: -50px;
+        }
+
+        .circle-3 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, #7c3aed, transparent);
+            top: 50%;
+            left: 10%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                padding: 30px;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            color: #6688aa;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
     </style>
-  </body>
+</head>
+
+<body>
+    <!-- Background Accents -->
+    <div class="accent-circle circle-1"></div>
+    <div class="accent-circle circle-2"></div>
+    <div class="accent-circle circle-3"></div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>PROJECT SHOWCASE</h1>
+        <p>Explore our innovative projects</p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+        <!-- AI Detection Project -->
+        <div class="project-card">
+            <span class="project-icon">🤖</span>
+            <h2 class="project-title">AI Detection</h2>
+            <span class="project-status">Active</span>
+            <p class="project-description">Advanced image recognition powered by machine learning. Upload images to get instant AI-powered analysis.</p>
+            <div class="project-features">
+                <div class="feature">Real-time image analysis</div>
+                <div class="feature">Machine learning powered</div>
+                <div class="feature">Drag & drop support</div>
+                <div class="feature">Confidence metrics</div>
+            </div>
+            <a href="AI DETECTION/index.html" class="project-button">Launch Project</a>
+        </div>
+
+        <!-- Bookstore Project -->
+        <div class="project-card">
+            <span class="project-icon">📚</span>
+            <h2 class="project-title">Bookstore</h2>
+            <span class="project-status">Active</span>
+            <p class="project-description">Complete e-commerce bookstore with admin panel. Browse, purchase, and manage books with full inventory control.</p>
+            <div class="project-features">
+                <div class="feature">E-commerce functionality</div>
+                <div class="feature">Admin dashboard</div>
+                <div class="feature">Inventory management</div>
+                <div class="feature">User-friendly interface</div>
+            </div>
+            <a href="bookstore/index.html" class="project-button">Launch Project</a>
+        </div>
+
+        <!-- Progress Bar Project -->
+        <div class="project-card">
+            <span class="project-icon">📊</span>
+            <h2 class="project-title">Progress Bar</h2>
+            <span class="project-status">Active</span>
+            <p class="project-description">Interactive progress tracking component. Perfect for demonstrating workflow completion and task management.</p>
+            <div class="project-features">
+                <div class="feature">Smooth animations</div>
+                <div class="feature">Responsive design</div>
+                <div class="feature">Multiple styles</div>
+                <div class="feature">Performance optimized</div>
+            </div>
+            <a href="Progressbar/index.html" class="project-button">Launch Project</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>© 2026 Nicholas XII-4 Storefront. All projects designed and developed with attention to detail.</p>
+    </div>
+</body>
 </html>
